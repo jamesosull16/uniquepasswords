@@ -1,18 +1,3 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
-
-// Add event listener to generate button
-
-generateBtn.addEventListener("click", writePassword);
-
 //VARIABLE DECLARATION
 var specialCharacters = [
   "!",
@@ -85,13 +70,11 @@ function generatePassword() {
   var pwdLength = prompt(
     "How long would you like your password to be? (Must be between 8-128 characters)"
   );
-  if (
-    typeof pwdLength === parseInt("number") ||
-    pwdLength > 8 ||
-    pwdLength < 128
-  ) {
+
+  if (pwdLength !== typeof "" || pwdLength < 8 || pwdLength > 128) {
     return alert("Must be a numeric value between 8 - 128!");
   }
+  console.log(typeof "");
 
   var upperCase = confirm(
     "Would you like to use uppercase letters in your password?"
@@ -134,18 +117,34 @@ function generatePassword() {
     }
 
     if (specialChar) {
-      var randomIndex = random(specialCharacters.length - 1);
+      var randomIndex = random(specialCharacters.length);
       var randomCharacter = specialCharacters[randomIndex];
       if (password.length < pwdLength) {
         password.push(randomCharacter);
       }
     }
   }
-  //random method
+
+  //randomizer method
   function random(limit) {
     return Math.floor(Math.random() * limit);
   }
 
   console.log(password);
-  return password;
+  return password.join("");
 }
+
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// Add event listener to generate button
+
+generateBtn.addEventListener("click", writePassword);
