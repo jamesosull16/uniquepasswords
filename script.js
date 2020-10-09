@@ -74,7 +74,6 @@ function generatePassword() {
   if (typeof pwdLength !== "string" || pwdLength < 8 || pwdLength > 128) {
     return alert("Must be a numeric value between 8 - 128!");
   }
-  console.log(typeof "");
 
   var upperCase = confirm(
     "Would you like to use uppercase letters in your password?"
