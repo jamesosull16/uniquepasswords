@@ -71,7 +71,7 @@ function generatePassword() {
     "How long would you like your password to be? (Must be between 8-128 characters)"
   );
 
-  if (pwdLength !== typeof "" || pwdLength < 8 || pwdLength > 128) {
+  if (typeof pwdLength !== "string" || pwdLength < 8 || pwdLength > 128) {
     return alert("Must be a numeric value between 8 - 128!");
   }
   console.log(typeof "");
@@ -130,7 +130,6 @@ function generatePassword() {
     return Math.floor(Math.random() * limit);
   }
 
-  console.log(password);
   return password.join("");
 }
 
