@@ -2,7 +2,7 @@
 
 ## Description:
 
-Cyber security is of utmost important and thats why it's critical to have a unique and hard to guess password, especially when dealing with sensitive information. This application, after specifying the length and types of characters you would like to use, will generate a very unique and random password.
+If you are in a position that deals with sensitive inoformation than having a unique, hard to guess password is critically importnant. This application will generate a very unique and random password dependent upon user input and responses.
 
 ---
 
